@@ -1,0 +1,17 @@
+{
+  "name": "website-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/antnf3/website-template.git",
+  "author": "antnf3 <antnf3@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel src/index.html --target browser --port 3000 --open",
+    "build": "parcel build src/index.html -d build --public-url ./"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.5",
+    "sass": "^1.26.3",
+    "typescript": "^3.8.3"
+  }
+}
