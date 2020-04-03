@@ -1,0 +1,109 @@
+@import "_variables";
+
+@mixin flex($display, $justifyContent, $alignItems) {
+  display: $display;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+:root {
+  --content-width: 65rem;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.header-nav {
+  position: fixed;
+  left: 2rem;
+  top: 2rem;
+  color: $headerFontColor;
+  font-size: 1.5rem;
+  z-index: 999;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  @include flex(flex, space-between, center);
+  height: 6.813rem;
+  background-color: $commonBackgroundColor;
+  z-index: 10;
+  margin-bottom: 3vh;
+  div {
+    margin: 0 6rem;
+  }
+  span {
+    color: $headerFontColor;
+    height: 100%;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+}
+
+.page {
+  height: 100vh;
+  //   background-color: yellow;
+  //   overflow: hidden;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+main {
+  max-width: var(--content-width);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .head-line {
+    max-width: var(--content-width);
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: -1px;
+    font-weight: 600;
+  }
+  .allow-button {
+    position: absolute;
+    bottom: 30px;
+    right: 60px;
+    font-size: 2rem;
+  }
+
+  .intro {
+    max-width: var(--content-width);
+    height: 100vh;
+
+    .hero-image {
+      margin-top: 9rem;
+      img {
+        width: auto;
+        height: 70vh;
+      }
+    }
+  }
+
+  .home-about-text {
+    max-width: var(--content-width);
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+
+    p {
+      text-indent: 8em;
+      font-size: 1rem;
+      color: rgba(33, 31, 31, 1);
+      letter-spacing: -0.5px;
+      line-height: 1.5em;
+      margin-bottom: 1.5em;
+    }
+  }
+  .text {
+    line-height: 1.5em;
+  }
+}
