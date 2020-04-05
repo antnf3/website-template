@@ -39,6 +39,7 @@ header {
     height: 100%;
     font-size: 3rem;
     font-weight: 600;
+    letter-spacing: -3px;
   }
 }
 
@@ -48,6 +49,7 @@ header {
   //   overflow: hidden;
   max-width: var(--content-width);
   margin: 0 auto;
+  padding: 5vh 5vw 10vh;
 }
 
 main {
@@ -68,6 +70,7 @@ main {
     font-size: 2rem;
     letter-spacing: -1px;
     font-weight: 600;
+    position: absolute;
   }
   .allow-button {
     position: absolute;
@@ -79,9 +82,9 @@ main {
   .intro {
     max-width: var(--content-width);
     height: 100vh;
-
+    position: relative;
     .hero-image {
-      margin-top: 9rem;
+      margin-top: 6rem;
       img {
         width: auto;
         height: 70vh;
@@ -89,14 +92,27 @@ main {
     }
   }
 
+  @media (max-width: 600px) {
+    .hero-image {
+      margin-top: -3em;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .hero-image img {
+      height: auto !important;
+      width: 89vw !important;
+    }
+  }
+
   .home-about-text {
     max-width: var(--content-width);
-    margin-top: 3rem;
+    // margin-top: 0.5rem;
     margin-bottom: 10rem;
 
     p {
       text-indent: 8em;
-      font-size: 1rem;
+      font-size: 2rem;
       color: rgba(33, 31, 31, 1);
       letter-spacing: -0.5px;
       line-height: 1.5em;
@@ -106,4 +122,60 @@ main {
   .text {
     line-height: 1.5em;
   }
+}
+
+@media screen and (max-width: 700px) {
+  p,
+  ul,
+  li,
+  .secondary-title,
+  p:before {
+    font-size: 16px !important;
+    line-height: 22px !important;
+  }
+}
+
+.flex-row-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  img {
+    width: 100%;
+  }
+}
+.hr-top {
+  border-top: 1px solid #dadada;
+}
+.flex-2-row {
+  flex: 1;
+}
+.pad-left-2 {
+  padding-left: 2em;
+}
+
+p,
+ul {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.round-button {
+  border: 1px solid #dadada;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  line-height: 1;
+  display: inline-block;
+  margin: 5px 5px 0 0;
+  min-width: 144px;
+  text-align: center;
+  transition: all 0.2s ease-in;
+}
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+a {
+  -webkit-font-smoothing: antialiased;
 }
