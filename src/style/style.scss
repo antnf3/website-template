@@ -20,14 +20,24 @@ body {
   color: $headerFontColor;
   font-size: 1.5rem;
   z-index: 999;
+  @media (max-width: 600px) {
+    left: 2rem;
+    top: 0.7rem !important;
+  }
 }
+
+.small-nav {
+  left: 2rem;
+  top: 0.7rem !important;
+}
+
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   @include flex(flex, space-between, center);
-  height: 6.813rem;
+  // height: 6.813rem;
   background-color: $commonBackgroundColor;
   z-index: 10;
   margin-bottom: 3vh;
@@ -41,10 +51,39 @@ header {
     font-weight: 600;
     letter-spacing: -3px;
   }
+  @media (max-width: 600px) {
+    justify-content: flex-start !important;
+    padding-left: 5rem;
+    div {
+      margin: 0.53rem 0.15rem;
+    }
+    span {
+      font-size: 1.7rem !important;
+    }
+  }
+  @media (min-width: 600px) {
+    height: 6.813rem;
+  }
+}
+
+.small-header {
+  height: auto;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  justify-content: flex-start !important;
+  padding-left: 5rem;
+  div {
+    margin: 0.53rem 0.15rem;
+  }
+
+  span {
+    font-size: 1.7rem !important;
+    transition: all 0.3s ease-in-out;
+  }
+  transition: box-shadow 0.5s ease-in-out;
 }
 
 .page {
-  height: 100vh;
+  height: 100%;
   //   background-color: yellow;
   //   overflow: hidden;
   max-width: var(--content-width);
@@ -96,6 +135,9 @@ main {
     .hero-image {
       margin-top: -3em;
     }
+    .allow-button {
+      right: 15px;
+    }
   }
 
   @media (max-width: 800px) {
@@ -143,15 +185,28 @@ main {
   img {
     width: 100%;
   }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    .mobile-first-position {
+      order: -1;
+    }
+  }
 }
+
 .hr-top {
   border-top: 1px solid #dadada;
 }
 .flex-2-row {
   flex: 1;
+  @media (max-width: 600px) {
+    padding: 1em 0 !important;
+  }
 }
 .pad-left-2 {
   padding-left: 2em;
+  @media (max-width: 600px) {
+    padding-left: 0 !important;
+  }
 }
 
 p,
@@ -168,7 +223,7 @@ ul {
   line-height: 1;
   display: inline-block;
   margin: 5px 5px 0 0;
-  min-width: 144px;
+  min-width: 7rem;
   text-align: center;
   transition: all 0.2s ease-in;
 }
@@ -178,4 +233,20 @@ a {
 }
 a {
   -webkit-font-smoothing: antialiased;
+}
+
+footer {
+  padding: 3vh 5vw 1vh;
+  background-color: rgba(33, 32, 32, 0.83);
+  color: #fff;
+  bottom: 0;
+  line-height: 1.5em;
+
+  .footer-inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.5px;
+  }
 }
